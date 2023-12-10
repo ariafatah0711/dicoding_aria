@@ -27,9 +27,10 @@ In the context of web development, I have delved into a comprehensive file throu
 ## 📋 Table of Contents
 <details id="back" open>
   <summary><b>Submit Dicoding</b></summary>
-    - <a alt="dicoding_1" href="https://github.com/ariafatah0711/dicoding_1">01 - Belajar Dasar Pemograman Web</a>
-    - <a alt="dicoding_2" href="https://github.com/ariafatah0711/dicoding_2">02 - Belajar Membuat Front-End Web untuk Pemula</a>
-    - <a alt="dicoding_3" href="#">03 - Belajar Fundamental Front-End Web Development</a>
+  
+  - <a alt="dicoding_1" href="https://github.com/ariafatah0711/dicoding_1">01 - Belajar Dasar Pemograman Web</a>
+  - <a alt="dicoding_2" href="https://github.com/ariafatah0711/dicoding_2">02 - Belajar Membuat Front-End Web untuk Pemula</a>
+  - <a alt="dicoding_3" href="https://github.com/ariafatah0711/dicoding_2">03 - Belajar Fundamental Front-End Web Development</a>
 </details>
 
 <p id="download"></p>
