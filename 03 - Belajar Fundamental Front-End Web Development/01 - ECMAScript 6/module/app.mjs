@@ -5,7 +5,7 @@ const displayStock = (stock) => {
 
   for (const type in stock) {
     const coffeeStockItemElement = document.createElement("li");
-    coffeeStockItemElement.innerHTML = `${type} ${stock[type]}`;
+    coffeeStockItemElement.innerHTML = `${type}: ${stock[type]}`;
     coffeeStockListElement.appendChild(coffeeStockItemElement);
   }
 };
