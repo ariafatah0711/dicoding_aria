@@ -13,11 +13,19 @@ class ImageFigure extends HTMLElement {
 
   render() {
     this.innerHTML = `
-            <figure>
-            <img src="${this.src}" alt="${this.alt}">
-            <figcaption>${this.caption}</figcaption>
-            </figure>
-        `;
+              <figure>
+              <img src="${this.src}" alt="${this.alt}">
+              <figcaption>${this.caption}</figcaption>
+              </figure>
+  
+              <style>
+                figure {
+                  border: 1px solid black;
+                  padding: 10px; width: auto;
+                }
+              </style>
+              `;
+    // atau gunakan lewat external css
   }
 
   attributeChangedCallback(name, oldvalue, newValue) {
@@ -25,6 +33,7 @@ class ImageFigure extends HTMLElement {
     this.render();
   }
 
+  // getter static untuk mengamati attribut caption, src, alt
   static get observedAttributes() {
     return [`caption`, `src`, `alt`];
   }

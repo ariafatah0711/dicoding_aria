@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>custom element</title>
+    <style src="style.css"></style>
+</head>
+<body>
+    
+    <a href="../">back..</a>
+
+    <!-- secara manual -->
+    <!-- <article-item
+        id="1"
+        title="Lorem Ipsum Dolor"
+        featured-image="https://picsum.photos/id/204/536/354?grayscale"
+        description="Lorem Ipsum is simply dummy text of the printing"
+    </article-element> -->
+
+    <!-- jika ingin otomatis kita bisa gunakan di dalam javascriptnya -->
+    <!-- <article-item></article-item> -->
+
+    <div class="container"></div>
+    <script src="./script.js"></script>
+    <script>
+        const containerElement = document.querySelector(".container");
+
+        const articleItemElement = document.createElement("article-item")
+        articleItemElement.article = article; // set article di isi dengan value article
+
+        console.log(articleItemElement);
+        containerElement.appendChild(articleItemElement);
+    </script>
+    
+</body>
+</html>
