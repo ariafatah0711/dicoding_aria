@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>custom element</title>
+</head>
+<body>
+    
+    <image-figure>ini adalah custom element yang kita buat</image-figure>
+    <script>
+// custom element => element custom
+    // membuat class untuk element terlebih dahulu
+    class ImageFigure extends HTMLElement {}
+    // lalu men defined alias membuat nama element nya
+    customElements.define("image-figure", ImageFigure);
+
+// siklus hidup custom element
+    // connectedCallback() => Akan terpanggil setiap kali elemen berhasil ditambahkan ke dokumen HTML (DOM).
+        // Callback ini merupakan tempat yang tepat untuk menjalankan konfigurasi awal seperti mendapatkan data, atau mengatur attribute.
+
+    // disconnectedCallback() => Akan terpanggil setiap kali elemen dikeluarkan (remove()) dari DOM.
+        // Callback ini merupakan tempat yang tepat untuk membersihkan data yang masih disimpan pada elemen.
+        // Bisa itu event, state, ataupun objek.
+
+    // attributeChangedCallback() => Akan terpanggil setiap kali nilai atribut yang di-observe melalui fungsi static get observedAttributes diubah.
+        // Callback ini bisa kita manfaatkan untuk memuat ulang data yang ditampilkan oleh elemen.
+
+    // adoptedCallback() => Akan terpanggil setiap kali elemen dipindahkan pada dokumen baru.
+        // Kita relatif jarang menggunakan callback ini, namun jika kita memanfaatkan tag <iframe> maka callback ini akan terpanggil.
+
+// membuat isntance custom element
+    const imageFigureElement = document.createElement("image-figure");
+    document.body.appendChild(imageFigureElement);
+    </script>
+
+    <script>
+        // cara kerja nya
+        //                                                     constructor()
+        //                                                         |
+        //                                                 connectedCallback()
+        //                                                         |
+        // adoptedCallback()  <-- jika element di adopsi <-- elemen aktif --> jika val attr beruba --> attributeChangedCallback()
+        //                                                         |
+        //                                                 jika elemen di hapus
+        //                                                         |
+        //                                                 disconnectedCallback()
+    </script>
+
+</body>
+</html>
