@@ -1,9 +1,9 @@
-import DataSource from '../data/data-source.js';
+import "../component/search-bar.js";
+import DataSource from "../data/data-source.js";
 
 const main = () => {
-  const searchElement = document.querySelector('#searchElement');
-  const buttonSearchElement = document.querySelector('#searchButtonElement');
-  const clubListElement = document.querySelector('#clubList');
+  const searchElement = document.querySelector("search-bar");
+  const clubListElement = document.querySelector("#clubList");
 
   const onButtonSearchClicked = async () => {
     try {
@@ -14,13 +14,13 @@ const main = () => {
     }
   };
 
-  const renderResult = results => {
-    clubListElement.innerHTML = '';
+  const renderResult = (results) => {
+    clubListElement.innerHTML = "";
 
-    results.forEach(club => {
-      const {name, fanArt, description} = club;
-      const clubElement = document.createElement('div');
-      clubElement.setAttribute('class', 'club');
+    results.forEach((club) => {
+      const { name, fanArt, description } = club;
+      const clubElement = document.createElement("div");
+      clubElement.setAttribute("class", "club");
 
       clubElement.innerHTML = `
         <img class="fan-art-club" src="${fanArt}" alt="Fan Art">
@@ -34,12 +34,12 @@ const main = () => {
     });
   };
 
-  const fallbackResult = message => {
-    clubListElement.innerHTML = '';
+  const fallbackResult = (message) => {
+    clubListElement.innerHTML = "";
     clubListElement.innerHTML += `<h2 class="placeholder">${message}</h2>`;
   };
 
-  buttonSearchElement.addEventListener('click', onButtonSearchClicked);
+  searchElement.clickEvent = onButtonSearchClicked;
 };
 
 export default main;

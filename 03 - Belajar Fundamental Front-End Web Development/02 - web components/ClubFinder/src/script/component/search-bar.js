@@ -18,7 +18,7 @@ class SearchBar extends HTMLElement {
             <input placeholder="Search football club" id="searchElement" type="search">
             <button id="searchButtonElement" type="submit">Search</button>
         </div>
-    `;
+        `;
 
     this.querySelector("#searchButtonElement").addEventListener(
       "click",
