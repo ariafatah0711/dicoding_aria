@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shadow dom</title>
+    <style>
+        h1 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="../">back..</a>
+
+    <h1>ini merupakan content yang berada di document tree</h1>
+
+    <script>
+// Shadow DOM => dapat mengisolasi sebagian struktur DOM di dalam komponen
+    // sehingga tidak dapat disentuh dari luar komponen atau nodenya.
+
+    // Shadow DOM dapat membuat DOM Tree lain terbentuk secara terisolasi melalui host.
+        // shadow host => merupakan komponen/node yang terdapat pada regular DOM dimana shadow DOM terlampir
+        // shadow tree => merupakan DOM tree di dalam shadow DOM
+        // shadow boundary => merupakan batas dari shadow DOM dengan regular DOM
+        // shadow root => Root node dari shadow tree
+
+    // Kita dapat memanipulasi elemen yang berada di dalam Shadow Tree layaknya pada Document Tree
+
+// =====================================================================================================
+    // shadow Host
+    const divElement = document.createElement("div");
+
+    // element yang berada di dalam shadow DOM
+    const headingElement = document.createElement("h1");
+    headingElement.innerText = "ini merupakan content di dalam shadow DOM";
+
+    // menampilkan shadow root pada shadow DOM
+    // mengatur shadow dengan nilai open
+    const shadowRoot = divElement.attachShadow({mode: "open"});
+    // const shadowRoot = divElement.attachShadow({mode: "closed"});
+
+    // memasukan element heading ke dalam shadow root
+    shadowRoot.appendChild(headingElement);
+
+    // memasukan element shadow host ke regular DOM
+    document.body.appendChild(divElement);
+
+
+// styling shadow element
+    shadowRoot.innerHTML += `
+        <style>
+            h1 {
+                color: green;
+            }
+        </style>
+    `;
+    </script>
+
+</body>
+</html>
