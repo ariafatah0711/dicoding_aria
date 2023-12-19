@@ -43,3 +43,22 @@ object package =>
         "devDependencies": {
             "http-server": "^0.12.1"
         }
+
+-------------------------------------------------------------------------------------------------
+kode ini akan jalan ketika
+    kita melakukan perintah npm run test
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "http-server ." // ini untuk menjalankan local server
+    },
+
+--------------------------------------------------------------------------------------------------
+pacakge pada cakupan global =>
+    memasang package pada cakupan global tidak akan menambahkan apapun pada berkas package.json proyek lokal
+
+    Pada Windows, lokasi default dari global modules adalah C -> Program Files -> nodejs -> node_modules
+
+    npm list -g
+
+    C:\Users\ariaf\AppData\Roaming\npm
+    └── http-server@14.1.1
