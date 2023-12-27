@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <a href="./">back</a>
+    
+    <script>
+        const xhr = new XMLHttpRequest()
+
+        xhr.onload = function() {
+            var data = JSON.parse(this.responseText)
+
+            console.log(this.response)
+            console.log(data)
+        }
+
+        xhr.onerror = function() {
+            console.log('Ups something error');
+        }
+
+        xhr.open("GET", "https://books-api.dicoding.dev/list")
+        xhr.send();
+    </script>
+
+</body>
+</html>

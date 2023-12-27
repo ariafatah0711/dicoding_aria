@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <a href="./">back</a>
+    
+    <script>
+        fetch('https://books-api.dicoding.dev/list')
+            .then((Response) => {
+                return Response.json();
+            })
+            .then((responseJson) => {
+                console.info(responseJson);
+            })
+            .catch((error) => {
+                console.info(error);
+            })
+    </script>
+
+</body>
+</html>
