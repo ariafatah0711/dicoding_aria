@@ -1,0 +1,16 @@
+- operasi
+  - =V1+V2
+  - =V1-V2
+  - =V1*V2
+  - =V1/V2
+  - =V1%V2
+
+- function
+  - =SUM(V1:V10) => menjumlahkan data array
+  - =averange(V1:V10) => mencari rata rata
+  - =count(V1:V10) => menghitung jumlah data
+  - =min(V1:V10) => mencari nilai terendah
+  - =max(V1:V10) => mencari niali tertinggi
+  - =trim() => menghapus baris kosong kanan dan kiri
+  - =replace()
+  - =uniqe()
