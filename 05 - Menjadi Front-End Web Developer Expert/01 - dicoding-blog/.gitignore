@@ -1,0 +1,9 @@
+# For IDE
+.vscode
+.idea
+
+# For web application
+dist
+node_modules
+
+.package-lock.json
