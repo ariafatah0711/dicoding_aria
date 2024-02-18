@@ -1,0 +1,6 @@
+.flexbox {
+    grid-template-columns: 1fr 1fr 1fr; /* 1fr artinya 33% */
+    grid-template-columns: 1fr 2fr 1fr; /* artinya 25% 50% 25% */
+    grid-template-columns: repeat(6, 1fr); /* 1fr, 1fr, 1fr, 1fr, 1fr, 1fr */
+    grid-template-columns: repeat(3, 1fr, 2fr); /* 1fr 2fr 1fr 2fr 1fr 2fr */
+}

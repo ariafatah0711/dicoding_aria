@@ -43,6 +43,13 @@ body {
   color: #212121;
 }
 
+.header__menu {
+  font-size: 32px;
+  margin: 10px auto;
+  display: block;
+  width: 30px;
+}
+
 /*
  * Top level navigation
  */
