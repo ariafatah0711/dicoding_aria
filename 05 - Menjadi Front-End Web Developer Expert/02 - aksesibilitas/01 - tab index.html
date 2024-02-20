@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        body {display: flex; align-items: center; height: 100vh; width: 100vh;}
+        .row {justify-content: center;}
+        .row button {
+            display: flex;
+            height: 100px; width: 100px;
+            font-size: 5rem;
+            justify-content: center;
+        }
+        .row button:active {
+            background: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row g-4">
+            <button tabindex="3">3</button>
+            <button tabindex="1">1</button>
+            <button tabindex="2">2</button>
+            <button tabindex="4">4</button>
+            <button tabindex="5">5</button>
+        </div>
+    </div>
+    
+</body>
+</html>
