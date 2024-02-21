@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  outline: none;
+  margin: 0; padding: 0;
+}
+
+img {
+  display: block;
+}
+
+/* body */
+
+/* header */
+
+/* hero */
+#hero {
+  display: flex;
+  justify-content: center;
+}
+#hero img {
+  width: 100vh;
+}
+@media screen and (min-width: 1200px) {
+  #hero img {
+    width: 1000px;
+  }
+}
