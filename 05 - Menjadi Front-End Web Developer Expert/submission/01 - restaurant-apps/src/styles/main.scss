@@ -1,3 +1,6 @@
+$text-hover: #d3ad7f;
+$brd: 0.3px solid black;
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 * {
   font-family: 'Poppins', Tahoma ,sans-serif;
@@ -6,7 +9,7 @@
   outline: none;
   text-decoration: none;
   text-transform: capitalize;
-  user-select: none;
+  /* user-select: none; */
 }
 html {
   overflow-x: hidden;
@@ -14,26 +17,12 @@ html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
-
-:root {
-  --brd: 0.3px solid black;
-}
-img {
-  display: block;
-}
-
+img {display: block;}
 
 
 /* body */
 body {
   padding-top: 50px;
-}
-
-/* main */
-main {
-  display: flex;
-  flex-direction: column;
-  /* padding: 10px 0; */
 }
 
 /* header */
@@ -66,9 +55,15 @@ header .navbar {
 }
 header .navbar a {
   color: white;
+  position: relative;
 }
 
-/* hero */
+/* main */
+main {
+  display: flex;
+  flex-direction: column;
+}
+
 #hero {
   height: 200px;
   display: flex;
@@ -80,69 +75,9 @@ header .navbar a {
   width: 100%;
 }
 
-/* restaurant */
 main .title h1 {
   padding: 10px 0;
   text-align: center;
-}
-
-#restaurant {
-  /* padding: 10px 0; */
-  display: grid;
-  flex-direction: column;
-  grid-template-columns: 1fr;
-}
-@media screen and (min-width: 700px) {
-  #restaurant {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  #restaurant .card-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    overflow: hidden;
-  }
-}
-@media screen and (min-width: 900px) {
-  #restaurant {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  #restaurant .card-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 200px;
-  }
-}
-
-#restaurant .card-image img,
-#restaurant .card-content {
-  width: 100%;
-
-}
-
-#restaurant .card {
-  padding: 10px 10px;
-  /* max-height: 400px; */
-  display: grid;
-  align-content: flex-start;
-  flex-direction: column;
-  overflow: hidden;
-
-}
-
-#restaurant .card-content {
-  display: flex;
-  flex-direction: column;
-
-}
-
-#restaurant .card p {
-  font-size: 0.7rem;
-  white-space: wrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 /* footer */
@@ -160,6 +95,32 @@ footer .title {
   font-size: 1rem;
 }
 
+// focus
+header .navbar a:focus,
+#explore h1:focus {
+  color: $text-hover;
+}
+
+restaurant-item:focus
+{
+  background: #efefef !important;
+}
+
+.skip-link {
+  position: fixed;
+  top: -40px;
+  left: 0;
+  background-color: #333333 !important;
+  color: white !important;
+  padding: 8px;
+  z-index: 100;
+}
+ 
+.skip-link:focus {
+   top: 50px;
+}
+
+// responsive
 @media screen and (min-width: 1200px) {
   body {
     display: flex;
@@ -170,12 +131,4 @@ footer .title {
   main {
     width: 1000px;
   }
-}
-
-
-a:focus {
-  color: blue !important;
-}
-*:focus {
-  color: blue !important;
 }
