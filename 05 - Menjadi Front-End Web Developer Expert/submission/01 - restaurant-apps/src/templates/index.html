@@ -8,17 +8,22 @@
 <body>
 
   <a tabindex="1" href="#explore" class="skip-link">Menuju ke konten</a>
-  <header>
+  <header id="home">
     <div class="title">
       <img src="./images/logo/logo.webp" alt="logo-gurih">
       <!-- <h1>Gurih Nusantara</h1> -->
     </div>
-    <nav class="navbar">
-      <a tabindex="2" href="./">home</a>
-      <a tabindex="3" href="#explore">explore</a>
-      <a tabindex="4" href="#">favorite</a>
-      <a tabindex="5" href="#contact">contact</a>
-      <a tabindex="6" href="https://s.id/ariafatah">about us</a>
+    <div class="menu-container">
+      <div id="menu" class="menu-icon">☰</div>
+    </div>
+    <nav id="drawer" class="nav">
+      <ul>
+        <li><a tabindex="2" href="#">home</a></li>
+        <li><a tabindex="3" href="#explore">explore</a></li>
+        <li><a tabindex="4" href="#favorite">favorite</a></li>
+        <!-- <li><a tabindex="5" href="#contact">contact</a></li> -->
+        <li><a tabindex="6" href="https://s.id/ariafatah">about us</a></li>
+      </ul>
     </nav>
   </header>
 
@@ -28,23 +33,22 @@
     </section>
 
     <div id="explore" class="title">
-      <h1 tabindex="7">explore Restaurant</h1>
+      <h1 tabindex="0">explore Restaurant</h1>
       <!-- <div>
         <label for="explore-search">search restaurant</label><input id="explore-search" type="text">
       </div> -->
     </div>
 
     <restaurant-list id="restaurant"></restaurant-list>
+
+    <div id="favorite" class="title">
+      <h1 tabindex="0">favorite Restaurant</h1>
+    </div>
+
+    <restaurant-list id="restaurant"></restaurant-list>
   </main>
 
-  <footer tabindex="0">
-    <div class="title">
-      <h1>Copyright &copy;2024 - Gurih Nusantara</h1>
-    </div>
-    <div class="footer-content">
-
-    </div>
-  </footer>
+  <footer-app></footer-app>
 
 </body>
 </html>

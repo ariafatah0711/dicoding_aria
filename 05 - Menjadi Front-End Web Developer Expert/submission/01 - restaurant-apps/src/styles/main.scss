@@ -1,4 +1,5 @@
 $text-hover: #d3ad7f;
+$bg-1: #333333;
 $brd: 0.3px solid black;
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
@@ -18,6 +19,12 @@ html {
   overflow-x: hidden;
 }
 img {display: block;}
+img {
+  user-select: none;
+}
+a, .menu-icon {
+  cursor: pointer;
+}
 
 
 /* body */
@@ -28,14 +35,56 @@ body {
 /* header */
 header {
   width: 100%;
-  padding: 0 10px;
+  padding: 0 20px 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
-  background: #333333;
+  background: $bg-1;
+  color: white;
   border-bottom: 0.5px solid grey;
+}
+header .title, 
+header .menu-icon, 
+header .menu-container {
+  z-index: 10;
+}
+header .menu-icon {
+  height: 50px;
+  display: none;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 700px) {
+  header .menu-icon {
+    display: flex !important;
+    justify-content: flex-end;
+  }
+  header .menu-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    background: $bg-1;
+  }
+  header #drawer {
+    width: 100%;
+    position: absolute;
+    top: -250px; left: 0;
+    background: $bg-1;
+    transition: all 0.5s ease-in-out;
+  }
+  header .nav ul {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    padding-bottom: 10px;
+  }
+  .open {
+    top: 50px !important;
+  }
 }
 
 header .title {
@@ -47,13 +96,14 @@ header .title h1 {
   font-size: 1rem;
 }
 
-header .navbar {
+header .nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 20px;
+  list-style: none;
 }
-header .navbar a {
+header .nav li a {
   color: white;
   position: relative;
 }
@@ -80,15 +130,15 @@ main .title h1 {
   text-align: center;
 }
 
-/* footer */
-footer {
+/* footer-app */
+footer-app {
   width: 100%;
   display: flex;
   height: 100px;
-  background: #333333;
+  background: $bg-1;
   color: white;
 }
-footer .title {
+footer-app .title {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -96,8 +146,9 @@ footer .title {
 }
 
 // focus
-header .navbar a:focus,
-#explore h1:focus {
+header .nav a:focus,
+#explore h1:focus,
+footer-app:focus {
   color: $text-hover;
 }
 
@@ -110,7 +161,7 @@ restaurant-item:focus
   position: fixed;
   top: -40px;
   left: 0;
-  background-color: #333333 !important;
+  background-color: $bg-1 !important;
   color: white !important;
   padding: 8px;
   z-index: 100;
@@ -118,6 +169,7 @@ restaurant-item:focus
  
 .skip-link:focus {
    top: 50px;
+   color: $text-hover !important;
 }
 
 // responsive
@@ -131,4 +183,13 @@ restaurant-item:focus
   main {
     width: 1000px;
   }
+}
+
+/* menhilangkan efek biru pada saat klik link di mobile */
+*, *:before, *:after {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
