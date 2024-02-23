@@ -8,10 +8,10 @@
 <body>
 
   <a tabindex="1" href="#explore" class="skip-link">Menuju ke konten</a>
+
   <header id="home">
-    <div class="title">
-      <img src="./images/logo/logo.webp" alt="logo-gurih">
-      <!-- <h1>Gurih Nusantara</h1> -->
+    <div class="header-logo">
+      <img src="./images/logo/logo.webp" alt="">
     </div>
     <div class="menu-container">
       <div id="menu" class="menu-icon">☰</div>
@@ -20,32 +20,26 @@
       <ul>
         <li><a tabindex="2" href="#">home</a></li>
         <li><a tabindex="3" href="#explore">explore</a></li>
+        <li><a tabindex="3" href="#top-restaurant">top</a></li>
         <li><a tabindex="4" href="#favorite">favorite</a></li>
-        <!-- <li><a tabindex="5" href="#contact">contact</a></li> -->
-        <li><a tabindex="6" href="https://s.id/ariafatah">about us</a></li>
+        <li><a tabindex="5" href="https://s.id/ariafatah">about us</a></li>
       </ul>
     </nav>
   </header>
 
+  <hero-app class="hero"></hero-app>
+  
   <main>
-    <section id="hero">
-      <img src="./images/heros/hero-image_2.jpg" alt="">
-    </section>
-
-    <div id="explore" class="title">
-      <h1 tabindex="0">explore Restaurant</h1>
-      <!-- <div>
-        <label for="explore-search">search restaurant</label><input id="explore-search" type="text">
-      </div> -->
-    </div>
-
+    <!-- explore -->
+    <h1 tabindex="0" id="explore" class="title">explore restaurant</h1>
     <restaurant-list id="restaurant"></restaurant-list>
+    
+    <!-- top restaurant -->
+    <h1 tabindex="0" id="top-restaurant" class="title">top restaurant</h1>
+    <top-restaurant-list id="top-restaurant"></top-restaurant-list>
 
-    <div id="favorite" class="title">
-      <h1 tabindex="0">favorite Restaurant</h1>
-    </div>
-
-    <restaurant-list id="restaurant"></restaurant-list>
+    <!-- favorite -->
+    <h1 tabindex="0" id="favorite" class="title">favorite restaurant</h1>
   </main>
 
   <footer-app></footer-app>

@@ -11,11 +11,11 @@ class RestaurantItem extends HTMLElement {
   render() {
     this.innerHTML = `
             <div class="card-image">
-                <img src="${this._restaurant.pictureId}" alt="Restaurant Image">
+                <img src="${this._restaurant.pictureId}" alt="image ${this._restaurant.name}">
             </div>
                 <div class="card-content">
-                <h2>Rating: ${this._restaurant.rating}</h2>
-                <h3>${this._restaurant.name}</h3>
+                <h3>Rating: ${this._restaurant.rating}</h3>
+                <h2>${this._restaurant.name}</h2>
                 <p>${this._restaurant.description}</p>
             </div>
     `;
