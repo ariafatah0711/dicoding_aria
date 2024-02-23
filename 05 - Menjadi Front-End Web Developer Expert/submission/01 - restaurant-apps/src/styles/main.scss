@@ -27,6 +27,9 @@ img {
   user-select: none;
 }
 a, .menu-icon, button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   min-height: 44px;
   min-width: 44px;
@@ -88,6 +91,8 @@ header .menu-icon {
 @media screen and (max-width: 700px) {
   header .menu-icon {
     display: flex !important;
+    background: $bg-1;
+    border: none;
   }
   header .menu-container {
     display: flex;
@@ -232,6 +237,10 @@ restaurant-item:focus,
 top-restaurant-item:focus {
   background: $text-white !important;
 }
+// restaurant-item:focus h2,
+// top-restaurant-item:focus h2 {
+//   border: 2px solid black;
+// }
 
 .skip-link {
   position: fixed;
