@@ -9,105 +9,33 @@ memasang eslint
 mengaudit kode
     "lint": "eslint ./src"
 
-prinsip membuat variable
-    niat
-        bad => let d; // elapsed time in days
-        good => let elapsedTimeInDays;
-    
-    memiliki arti =>  memberikan nama yang jelas
-        bad => const makeCapitalSentance = (array1, array2) => array1.map((item, index) => `${item} is capital of ${array2[index]}`);
-        good => const makeCapitalSentance = (capitals, countries) => capitals.map((capital, index) => `${capital} is capital of ${countries[index]}`);
+variable
+    Prinsip Membuat Variabel
+        - Jangan membuat remeh pembuatan variabel dalam proyek. Meskipun ini merupakan bagian terkecil dari suatu program, ia akan sulit dikelola jika ada banyak sekali.
 
-    mudah diucap
-        bad => const yyyymmdd = moment().format('YYYY/MM/DD');
-        good => const currentDate = moment().format('YYYY/MM/DD');
-    
-    mudah dicari
-        bad =>
-            // Nilai apakah 86400000 ini?
-            setTimeout(blastOff, 86400000);
-        good => 
-            // Deklarasikan sebagai constant variabel (gunakan huruf kapital).
-            const MILLISECONDS_IN_A_DAY = 86_400_000;
-            
-            setTimeout(blastOff, MILLISECONDS_IN_A_DAY);
-    
-    Ekplisit (Avoid Mental Mapping) => hindari menerjemahkan kata menjadi sebuah kata lain walaupun kata tersebut sudah umum digunakan (mental mapping).
-        bad =>
-            ```
-            const locations = ['Jakarta', 'Bandung', 'Surabaya', 'Denpasar', 'Sumbawa'];
- 
-            locations.forEach((l) => {
-            doSomeStuff();
-            doSomeOtherStuff();
-            
-            /*
-            ....
-            ....
-            ....
-            ....
-            ....
-            */
-            // tunggu, 'l' itu apa ya?
-            dispatch(l);
-            });
-            ```
-        good => 
-            ```
-            const locations = ['Jakarta', 'Bandung', 'Surabaya', 'Denpasar', 'Sumbawa'];
- 
-            locations.forEach((location) => {
-            doSomeStuff();
-            doSomeOtherStuff();
-            
-            /*
-            ....
-            ....
-            ....
-            ....
-            ....
-            */
-            dispatch(location);
-            });
-            ```
-        
-    Hindari penambahan kata yang tidak perlu
-        bad => 
-            ```
-            const Car = {
-                carMake: 'Honda',
-                carModel: 'Accord',
-                carColor: 'Blue',
-            };
-            
-            const paintCar = (car) => {
-                car.carColor = 'Red';
-            };
-            ```
-        good => 
-            ```
-            const Car = {
-                make: 'Honda',
-                model: 'Accord',
-                color: 'Blue',
-            };
-            
-            const paintCar = (car) => {
-                car.color = 'Red';
-            };
-            ```
-    
-    Gunakan default argument
-        bad => 
-        ```
-            const createMicrobrewery = (name) => {
-                const breweryName = name || 'Hipster Brew Co.';
-                // .....
-            };
-        ```
-        good =>
-        ```
-        const createMicrobrewery = (name = 'Hipster Brew Co.') => {
-            // ......
-        };
-        ```
+    Ada beberapa hal yang perlu kita perhatikan dalam membuat variabel.
+        - Memiliki makna yang jelas terhadap nilai yang akan disimpan.
+        - Mudah diingat dan diucap.
+        - Mudah dicari dan jelas maknanya.
+        - Memiliki makna yang eksplisit agar terhindar dari mental mapping.
+        - Menghindari penamaan yang berulang jika sudah jelas maknanya.
+        - Memiliki default argument pada sebuah parameter function/method.
+        - Prinsip Pembuatan Function
+        - Ketika membuat program, kita tentu banyak menuliskan sebuah logika. Agar mudah mengorganisasi kumpulan-kumpulan logika yang ada, biasanya logika dikelompokkan dalam sebuah fungsi.Selain variabel, function pun ada prinsip-prinsipnya juga dalam pembuatannya.
+
+function
+    Prinsip yang baik.
+        - Membatasi jumlah argumen/parameter.
+        - Tidak mengerjakan banyak hal alias fokus pada hal yang paling spesifik.
+        - Memiliki nama yang merepresentasikan tujuan tugasnya.
+        - Memanfaatkan functional programming daripada imperative programming.
+        - Melakukan enkapsulasi terhadap kode kondisional.
+        - Menghindari negasi kondisional.
+        - Mengurangi kode percabangan dalam sebuah function.
+        - prinsip yang perlu dihindari.
+
+    prinsip yang dihindari
+        - Melakukan duplikasi kode.
+        - Melakukan flagging terhadap parameter.
+        - Memiliki efek samping terhadap kode di luar. Biasanya, ini terjadi pada global variable.
+        - Melakukan pembuatan/penambahan method terhadap object yang telah ada (built-in object).

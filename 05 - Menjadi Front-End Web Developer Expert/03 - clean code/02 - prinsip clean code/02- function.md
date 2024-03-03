@@ -263,4 +263,147 @@ prinsip membuat function dengan baik
             ```
 
 impelemntasi function yang dihindari
+    hindari duplikasi kode
+        bad => 
+            ```
+            function showFootballPlayerList(footballPlayers) {
+            footballPlayers.forEach((footballPlayer) => {
+                const {
+                strName, strAvatar, strDescription, strFifaRanking,
+                } = footballPlayer;
+            
+                const data = {
+                name: strName,
+                avatar: strAvatar,
+                description: strDescription,
+                fifaRanking: strFifaRanking,
+                };
+            
+                render(data);
+            });
+            }
+            
+            function showBasketBallPlayerList(basketballPlayers) {
+            basketballPlayers.forEach((basketballPlayer) => {
+                const {
+                strName, strAvatar, strDescription, strFibaRanking,
+                } = basketballPlayer;
+            
+                const data = {
+                name: strName,
+                avatar: strAvatar,
+                description: strDescription,
+                fibaRanking: strFibaRanking,
+                };
+            
+                render(data);
+            });
+            }
+            ```
+        good =>
+            ```
+            function showPlayerList(players) {
+            players.forEach((player) => {
+                const {
+                strName, strAvatar, strDescription, strSport,
+                } = player;
+            
+                const data = {
+                name: strName,
+                avatar: strAvatar,
+                description: strDescription,
+                };
+            
+                switch (strSport) {
+                case 'football':
+                    data.fifaRanking = player.strFifaRanking;
+                    break;
+                case 'basketball':
+                    data.fibaRanking = player.strFibaRanking;
+                    break;
+                }
+            
+                render(data);
+            });
+            }
+            ```
     
+    Hindari Flagging pada Parameter => Flagging pada fungsi dapat membuat fungsi melakukan banyak hal. Ini tentu menyalahi prinsip pada materi sebelumnya.
+        bad => 
+            ```
+            function printCertificate(name, signature) {
+                if (signature) {
+                    print(`Congrats! ${name}, signatured by: ${signature}`);
+                } else {
+                    print(`Congrats! ${name}`);
+                }
+            }
+            ```
+        good => 
+            ```
+            function printCertificate(name) {
+                print(`Congrats! ${name}`);
+            }
+            
+            function printCertificateWithSignature(name, signature) {
+                print(`Congrats! ${name}, signatured by: ${signature}`);
+            }
+
+            ```
+        
+    Hindari Efek Samping => Efek samping merupakan hal buruk pada fungsi. Sejatinya fungsi harus melakukan satu hal dan tidak menyebabkan apapun di luar dari cakupan fungsinya
+        bad => 
+            ```
+            // Variabel pada cakupan global.
+            let ingredients = 'tomat;cabai;bawang merah;bawang putih';
+            
+            const stringSplitter = (splitChar) => {
+            ingredients = ingredients.split(splitChar);
+            };
+            
+            stringSplitter(';');
+            
+            // variabel ingredients berubah menjadi Array.
+            console.log(ingredients);
+            
+            /* Output:
+            ['tomat', 'cabai', 'bawang merah', 'bawang putih']
+            */
+            ```
+        good => 
+            ```
+            // Variabel pada cakupan global.
+            const ingredients = 'tomat;cabai;bawang merah;bawang putih';
+            
+            const stringSplitter = (splitChar, text) => text.split(splitChar);
+            
+            const newIngredients = stringSplitter(';', ingredients);
+            
+            console.log(ingredients); // tomat;cabai;bawang merah;bawang putih
+            console.log(newIngredients); // ['tomat', 'cabai', 'bawang merah', 'bawang putih']
+            ```
+        
+    Hindari penulisan fungsi global => Menggunakan variabel global merupakan praktek yang buruk pada JavaScript. Karena perubahan yang dilakukan dapat beririsan dengan library API yang digunakan.
+        bad => 
+            ```
+            String.prototype.isCanBeNumber = function () {
+                if (Number(this) === 0) return true;
+                return !!Number(this);
+            }
+            
+            const someStringNumber = '25';
+            
+            someStringNumber.isCanBeNumber(); // -> true
+            ```
+        good => 
+            ```
+            class SuperString extends String {
+                isCanBeNumber() {
+                    if (Number(this) === 0) return true;
+                    return !!Number(this);
+                }
+            }
+            
+            const someStringNumber = new SuperString('25');
+            someStringNumber.isCanBeNumber(); // -> true
+            ```
