@@ -21,3 +21,24 @@ Komponen Pembentuk PWA(s)
 - IndexedDB
 - Web Socket
 - Notifications
+
+struktuk web
+src
+├── public
+├── scripts
+│ ├── data
+│ ├── globals
+│ ├── routes
+│ ├── utils
+│ └── views
+│   ├── pages
+│   └── templates
+├── styles
+└── templates
+
+static - Ketika webpack berjalan dalam mode development, konten statis yang digunakan berdasarkan konten yang ada di dalam folder ‘dist’.
+open - Memberitahukan dev server untuk membuka browser setelah local server telah dimulai.
+port - Menspesifikkan nomor port yang digunakan oleh server lokal
+client.overlay - Menampilkan overlay di halaman browser yang berisikan pesan ketika terjadi error atau warning pada dari compiler.
+compress - Mengaktifkan gzip compression sehingga berkas yang diperoleh dari server lokal lebih efisien.
+
