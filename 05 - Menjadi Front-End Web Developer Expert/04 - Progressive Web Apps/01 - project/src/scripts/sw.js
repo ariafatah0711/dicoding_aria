@@ -1,6 +1,7 @@
+import "regenerator-runtime";
 import CacheHelper from "./utils/cache-helper";
 
-// Daftar asset yang akan di-caching
+// Daftar asset yang akan dicaching
 const assetsToCache = [
   "./",
   "./icons/icon-72x72.png",
@@ -22,7 +23,7 @@ self.addEventListener("install", (event) => {
   event.waitUntil(CacheHelper.cachingAppShell([...assetsToCache]));
 });
 
-self.addEventListener("active", (event) => {
+self.addEventListener("activate", (event) => {
   event.waitUntil(CacheHelper.deleteOldCache());
 });
 
