@@ -42,3 +42,14 @@ port - Menspesifikkan nomor port yang digunakan oleh server lokal
 client.overlay - Menampilkan overlay di halaman browser yang berisikan pesan ketika terjadi error atau warning pada dari compiler.
 compress - Mengaktifkan gzip compression sehingga berkas yang diperoleh dari server lokal lebih efisien.
 
+- workbox => tool untuk mempermudah dalam pembuatan
+    - npm install workbox-webpack-plugin -D
+    - npm install workbox-routing
+    - npm install workbox-strategies
+
+
+- project 2
+    ```
+    npm install workbox-webpack-plugin --save-dev
+    npm install workbox-window --save
+    ```
