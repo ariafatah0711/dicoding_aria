@@ -7,7 +7,7 @@
     "start-dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "serve": "http-server dist --port 9001",
-    "build-serve": "npm run build && npm run serve"
+    "bs": "npm run build && npm run serve"
   },
   "keywords": [],
   "author": "your_name <your_email@gmail.com>",
