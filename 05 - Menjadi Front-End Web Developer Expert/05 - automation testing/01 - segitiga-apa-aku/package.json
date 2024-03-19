@@ -1,0 +1,27 @@
+{
+  "name": "segitiga-apa-aku",
+  "version": "1.0.0",
+  "description": "Segitiga Apa Aku merupakan program yang dapat menentukan jenis segitiga",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "eslint": "eslint src/**/*.js tests/**/*.js",
+    "eslint:fix": "eslint --fix src/**/*.js tests/**/*.js"
+  },
+  "author": "your_name <your_email@mail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@types/jest": "^29.5.3",
+    "babel-jest": "^29.6.1",
+    "eslint": "^8.46.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.0",
+    "jest": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.1"
+  }
+}
