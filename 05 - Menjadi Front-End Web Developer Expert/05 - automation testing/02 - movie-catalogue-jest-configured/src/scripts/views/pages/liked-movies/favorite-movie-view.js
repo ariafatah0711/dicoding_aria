@@ -32,7 +32,7 @@ class FavoriteMovieView {
     }
 
     document.getElementById("movies").innerHTML = html;
-    document.getElementById("movies").addEventListener("movies:updated");
+    // document.getElementById("movies").addEventListener("movies:updated");
     document.getElementById("movies").dispatchEvent(new Event("movies:updated"));
   }
 
