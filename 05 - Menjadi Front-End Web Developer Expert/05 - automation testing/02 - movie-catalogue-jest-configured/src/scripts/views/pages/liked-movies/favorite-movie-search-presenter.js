@@ -35,6 +35,7 @@ class FavoriteMovieSearchPresenter {
     }
 
     this._view.showMovies(foundMovies);
+    // this._view.showFavoriteMovies(foundMovies);
   }
 
   get latestQuery() {

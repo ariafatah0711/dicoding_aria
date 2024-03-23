@@ -1,7 +1,6 @@
 import { beforeEach, describe, expect, it, jest } from "@jest/globals";
 import FavoriteMovieSearchPresenter from "../src/scripts/views/pages/liked-movies/favorite-movie-search-presenter";
-import FavoriteMovieIdb from "../src/scripts/data/favorite-movie-idb";
-import FavoriteMovieSearchView from "../src/scripts/views/pages/liked-movies/favorite-movie-search-view";
+import FavoriteMovieSearchView from "../src/scripts/views/pages/liked-movies/favorite-movie-view";
 
 describe("Searching movies", () => {
   let presenter;
@@ -51,9 +50,11 @@ describe("Searching movies", () => {
 
     it("should show the movies found by Favorite Movies", (done) => {
       document.getElementById("movie-search-container").addEventListener("movies:searched:updated", () => {
-        expect(document.querySelectorAll(".movie").length).toEqual(3);
+        expect(document.querySelectorAll(".movie-item").length).toEqual(3);
+
         done();
       });
+
       favoriteMovies.searchMovies.mockImplementation((query) => {
         if (query === "film a") {
           return [
@@ -62,8 +63,10 @@ describe("Searching movies", () => {
             { id: 333, title: "ini juga boleh film a" },
           ];
         }
+
         return [];
       });
+
       searchMovies("film a");
     });
 
@@ -134,7 +137,7 @@ describe("Searching movies", () => {
   describe("When no favorite movies could be found", () => {
     it("should show the empty message", (done) => {
       document.getElementById("movie-search-container").addEventListener("movies:searched:updated", () => {
-        expect(document.querySelectorAll(".movies__not__found").length).toEqual(1);
+        expect(document.querySelectorAll(".movie-item__not__found").length).toEqual(1);
         done();
       });
       favoriteMovies.searchMovies.mockImplementation((query) => []);
@@ -143,7 +146,7 @@ describe("Searching movies", () => {
 
     it("should not show any movie", (done) => {
       document.getElementById("movie-search-container").addEventListener("movies:searched:updated", () => {
-        expect(document.querySelectorAll(".movie").length).toEqual(0);
+        expect(document.querySelectorAll(".movie-item").length).toEqual(0);
         done();
       });
       favoriteMovies.searchMovies.mockImplementation((query) => []);
