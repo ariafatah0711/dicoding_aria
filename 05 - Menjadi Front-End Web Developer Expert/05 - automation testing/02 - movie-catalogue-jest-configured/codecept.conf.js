@@ -1,4 +1,5 @@
 const { setHeadlessWhen, setCommonPlugins } = require("@codeceptjs/configure");
+const { firefox } = require("playwright");
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
@@ -13,6 +14,7 @@ exports.config = {
   helpers: {
     Playwright: {
       browser: "chromium",
+      // browser: "firefox",
       url: "http://localhost:9010",
       show: true,
     },
@@ -21,9 +23,4 @@ exports.config = {
     I: "./steps_file.js",
   },
   name: "02 - movie-catalogue-jest-configured",
-  plugins: {
-    screenshotOnFail: {
-      enabled: false,
-    },
-  },
 };
