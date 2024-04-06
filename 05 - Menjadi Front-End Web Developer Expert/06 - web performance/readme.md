@@ -31,3 +31,5 @@ npm install sharp --save-dev
 
 - webp image
 npm install imagemin-webp-webpack-plugin --save-dev
+
+- loading lazy
