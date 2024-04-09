@@ -33,3 +33,4 @@ npm install sharp --save-dev
 npm install imagemin-webp-webpack-plugin --save-dev
 
 - loading lazy
+npm install lazysizes
