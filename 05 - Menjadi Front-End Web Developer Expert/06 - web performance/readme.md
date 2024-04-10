@@ -34,3 +34,16 @@ npm install imagemin-webp-webpack-plugin --save-dev
 
 - loading lazy
 npm install lazysizes
+
+- bundle analyzer => untuk melihat ukuran bundle di browser
+npm install webpack-bundle-analyzer --save-dev
+
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;v
+module.exports = {
+  /* other webpack configuration */
+ 
+  plugins: [
+    /* other webpack plugins configuration */
+    new BundleAnalyzerPlugin(),
+  ],
+};
