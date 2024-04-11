@@ -47,3 +47,5 @@ module.exports = {
     new BundleAnalyzerPlugin(),
   ],
 };
+
+- Code Splitting
