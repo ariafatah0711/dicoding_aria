@@ -1,3 +1,13 @@
+- npm install jest
+- npx jest --init
+```
+Would you like to use Typescript for the configuration file? → no
+Choose the test environment that will be used for testing → node
+Do you want Jest to add coverage reports? → no
+Which provider should be used to instrument code for coverage? → babel
+Automatically clear mock calls, instances, contexts and results before every test? → no
+```
+
 - npm install codeceptjs playwright --save-dev
 - npx codeceptjs init
 ```
