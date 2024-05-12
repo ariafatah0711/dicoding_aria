@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  max-width: 576px;
+  margin-inline: auto;
+}
+
+header nav {
+  text-align: center;
+}
+
+main {
+  margin-block-start: 2rem;
+}
+main h1 {
+  color: blue;
+}
+main ol li {
+  list-style-type: lower-alpha;
+}
+main ol li:hover {
+  color: red;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

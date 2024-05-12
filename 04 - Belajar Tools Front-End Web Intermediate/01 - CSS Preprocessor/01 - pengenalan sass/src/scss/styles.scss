@@ -1,0 +1,76 @@
+@use 'sass:map';
+@use 'sass:list';
+ 
+$primary-color: blue;
+$fonts: Arial, Helvetica, sans-serif;
+ 
+$container-breakpoints: (
+  'sm': 576px,
+  'md': 720px,
+  'lg': 960px,
+  'xl': 1140px,
+);
+ 
+$breakpoints: (
+  'sm': (
+    'min-width: 540px',
+  ),
+  'md': (
+    'min-width: 768px',
+  ),
+  'lg': (
+    'min-width: 992px',
+  ),
+  'xl': (
+    'min-width: 1200px',
+  ),
+);
+ 
+body {
+  font-family: $fonts;
+}
+ 
+.container {
+  max-width: map.get($container-breakpoints, 'sm');
+  margin-inline: auto;
+}
+ 
+header {
+  nav {
+    text-align: center;
+  }
+}
+ 
+main {
+  margin-block-start: 2rem;
+ 
+  h1 {
+    color: $primary-color;
+  }
+ 
+  ol li {
+    list-style-type: lower-alpha;
+ 
+    &:hover {
+      color: red;
+    }
+  }
+}
+ 
+@media screen and (#{list.nth(map.get($breakpoints, 'md'), 1)}) {
+  .container {
+    max-width: map.get($container-breakpoints, 'md');
+  }
+}
+ 
+@media screen and (#{list.nth(map.get($breakpoints, 'lg'), 1)}) {
+  .container {
+    max-width: map.get($container-breakpoints, 'lg');
+  }
+}
+ 
+@media screen and (#{list.nth(map.get($breakpoints, 'xl'), 1)}) {
+  .container {
+    max-width: map.get($container-breakpoints, 'xl');
+  }
+}

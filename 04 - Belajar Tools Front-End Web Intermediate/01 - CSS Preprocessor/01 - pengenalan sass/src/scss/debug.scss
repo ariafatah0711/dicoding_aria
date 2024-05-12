@@ -1,0 +1,11 @@
+@use 'sass:math';
+ 
+@debug 12;
+@debug (12 + 12) + 'px';
+@debug math.pow(10, 2) + vh;
+@debug 'Belajar CSS Preprocessor dengan Sass';
+@debug bold;
+@debug true;
+@warn false;
+@error Terjadi kesalahan;
+@debug 100;
