@@ -1,0 +1,102 @@
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:map';
+ 
+header {
+  .navbar-wrapper {
+    position: fixed;
+    inset-inline: 0;
+    inset-block-start: 0;
+    z-index: 9999;
+ 
+    transition: box-shadow 0.2s ease-in-out;
+ 
+    &.scrolled {
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px 4px #00000055;
+    }
+  }
+ 
+  .navbar {
+    padding: 22px 24px;
+ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ 
+    .nav-items {
+      position: fixed;
+      inset-block-start: 5rem;
+      inset-inline: 0;
+ 
+      padding: 30px 20px;
+      background-color: white;
+ 
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+ 
+      transition: 0.35s ease-in-out;
+      transform: translateX(-100%);
+      opacity: 1;
+ 
+      animation: disappear 0.5s ease-in-out;
+ 
+      &.active {
+        transform: translateX(0);
+        box-shadow: 0 6px 8px 0 #00000033;
+ 
+        animation: appear 0.5s ease-in-out;
+      }
+ 
+      .nav-item a {
+        display: inline-block;
+ 
+        padding: 6px 12px;
+        font-size: 1rem;
+ 
+        transition: all 0.15s ease-in-out;
+ 
+        &:hover {
+          color: #2d3e50;
+ 
+          text-shadow: 0 0 2px #000000;
+        }
+      }
+    }
+  }
+}
+ 
+/* SM: minimum viewport width 576px or above */
+@media screen and (min-width: map.get(var.$breakpoints, 'sm')) {
+  header .navbar {
+    padding: 25px 40px;
+  }
+}
+ 
+/* MD: minimum viewport width 768px or above */
+@media screen and (min-width: map.get(var.$breakpoints, 'md')) {
+  header .navbar {
+    button.hamburger-btn {
+      display: none;
+    }
+ 
+    .nav-items {
+      position: static;
+      transform: translateX(0);
+      opacity: 1;
+      padding: 0;
+ 
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+}
+ 
+/* LG: minimum viewport width 992px or above */
+@media screen and (min-width: map.get(var.$breakpoints, 'lg')) {
+  header .navbar {
+    padding: 24px 50px;
+  }
+}

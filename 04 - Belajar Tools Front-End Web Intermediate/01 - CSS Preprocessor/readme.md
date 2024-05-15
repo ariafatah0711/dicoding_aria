@@ -77,3 +77,4 @@ sass:string.
 @debug list.nth([line1, line2, line3], -1); // line3
 ```
 
+sass sass/main.scss css/styles.css --watch

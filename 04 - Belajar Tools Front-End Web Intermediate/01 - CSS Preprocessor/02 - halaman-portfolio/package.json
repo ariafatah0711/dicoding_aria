@@ -1,0 +1,17 @@
+{
+  "name": "halaman-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "sass:build": "sass sass/main.scss css/styles.css",
+    "serve": "http-server . --port 9000 -o / -c-1"
+  },
+  "keywords": [],
+  "author": "YOUR_NAME <YOUR_EMAIL>",
+  "repository": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
+

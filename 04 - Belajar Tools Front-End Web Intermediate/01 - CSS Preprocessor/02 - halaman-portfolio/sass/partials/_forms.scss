@@ -1,0 +1,71 @@
+@use '../abstracts/variables' as var;
+@use 'sass:map';
+ 
+input,
+textarea {
+  width: 100%;
+  padding: 6px 8px;
+ 
+ 
+  border: 2px solid #000000aa;
+  outline: none;
+  border-radius: 4px;
+ 
+ 
+  font-family: var.$primary-fonts;
+  font-size: 1rem;
+ 
+ 
+  transition: all 0.15s ease-in-out;
+ 
+ 
+  &:focus {
+    box-shadow: 0 0 0 4px #00000055;
+  }
+}
+ 
+ 
+textarea {
+  resize: vertical;
+}
+ 
+ 
+.input-control-dbl {
+  margin-block-start: 8px;
+ 
+ 
+  display: flex;
+  flex-direction: column;
+  gap: 8px 16px;
+ 
+ 
+  & > * {
+    flex-grow: 1;
+  }
+ 
+ 
+  .input-control {
+    margin: 0;
+  }
+}
+ 
+ 
+.input-control {
+  display: flex;
+  margin-block-start: 8px;
+}
+ 
+ 
+.submit-control {
+  display: flex;
+  margin-block-start: 16px;
+  justify-content: end;
+}
+ 
+ 
+/* MD: minimum viewport width 768px or above */
+@media screen and (min-width: map.get(var.$breakpoints, 'md')) {
+  .input-control-dbl {
+    flex-direction: row;
+  }
+}
