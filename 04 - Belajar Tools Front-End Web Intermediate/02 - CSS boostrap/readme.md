@@ -40,3 +40,18 @@ npm install http-server --save-dev
 
 npm install bootstrap@5.2.2 --save-exact
 <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+# breakpoint
+```
+Breakpoint Infiks Class Dimensi
+Extra small Tidak ada < 576px 
+Small sm >= 576px
+Medium md >= 768px
+Large lg >= 992px
+Extra large xl >= 1200px
+Extra extra large xxl >= 1400px
+```
+
+## container
+```
+```

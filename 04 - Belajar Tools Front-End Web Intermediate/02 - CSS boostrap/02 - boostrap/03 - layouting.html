@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../01 - pengenalan boostrap/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="../01 - pengenalan boostrap/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+        type="module"></script>
+</head>
+
+<body style="padding: 0 30%;">
+    <a class="btn btn-primary" href="../index.html">back</a> <br>
+
+    <!-- Layouting: Breakpoint & Container -->
+
+    <!-- Layouting: Grid System -->
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">Kolom 1</div>
+            <div class="col">Kolom 2</div>
+            <div class="col">Kolom 3</div>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <div class="row mb-3">
+            <div class="col border border-2">Kolom 1</div>
+            <div class="col-8 border border-2">Kolom 2</div>
+            <div class="col border border-2">Kolom 3</div>
+        </div>
+        <div class="row mb-3">
+            <div class="col border border-2">Kolom 1</div>
+            <div class="col-4 border border-2">Kolom 2</div>
+            <div class="col-4 border border-2">Kolom 3</div>
+            <div class="col border border-2">Kolom 4</div>
+        </div>
+    </div>
+
+    <!-- Layouting: Column dalam Grid System -->
+    <div class="container text-center">
+        <div class="row g-5">
+            <div class="col">
+                <div style="height: 8rem" class="bg-dark bg-opacity-25 row align-items-start mb-3">
+                    <div class="col">
+                        <div class="bg-primary text-bg-primary">One</div>
+                    </div>
+                    <div class="col">
+                        <div class="bg-secondary text-bg-secondary">Two</div>
+                    </div>
+                    <div class="col">
+                        <div class="bg-success text-bg-success">Three</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div style="height: 8rem" class="bg-dark bg-opacity-25 row align-items-center mb-3">
+                    <div class="col">
+                        <div class="bg-primary text-bg-primary">One</div>
+                    </div>
+                    <div class="col">
+                        <div class="bg-secondary text-bg-secondary">Two</div>
+                    </div>
+                    <div class="col">
+                        <div class="bg-success text-bg-success">Three</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div style="height: 8rem" class="bg-dark bg-opacity-25 row align-items-end mb-3">
+                    <div class="col">
+                        <div class="bg-primary text-bg-primary">One</div>
+                    </div>
+                    <div class="col">
+                        <div class="bg-secondary text-bg-secondary">Two</div>
+                    </div>
+                    <div class="col">
+                        <div class="bg-success text-bg-success">Three</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center bg-dark bg-opacity-50">
+        <div class="row justify-content-between">
+            <div class="col-2">
+                <div class="p-3 bg-primary">One</div>
+            </div>
+            <div class="col-2">
+                <div class="p-3 bg-success">Two</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <div class="bg-primary">Pertama</div>
+            </div>
+            <div class="col order-5">
+                <div class="bg-success">Kedua</div>
+            </div>
+            <div class="col order-first">
+                <div class="bg-warning">Ketiga</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../01 - pengenalan boostrap/node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="../01 - pengenalan boostrap/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+        type="module"></script>
+</head>
+
+<body>
+    <a class="btn btn-primary" href="../index.html">back</a> <br>
+
+    <!-- compoennt: button -->
+    <button>Tombol tanpa Bootstrap</button>
+    <button class="btn btn-primary">Tombol dengan Bootstrap</button>
+
+    <button type="button" class="btn btn-outline-primary">Primary</button>
+
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary">Tombol pertama</button>
+        <button type="button" class="btn btn-secondary">Tombol tengah</button>
+        <button type="button" class="btn btn-success">Tombol akhir</button>
+    </div>
+
+    <!-- component: alert dan toast -->
+    <div class="alert alert-primary">
+        Contoh alert dengan Bootstrap
+    </div>
+
+    <div class="alert alert-success alert-dismissible">
+        Contoh dismissing alert.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+
+    <!-- toast -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Judul Toast</strong>
+                <small>3 menit yang lalu</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+            </div>
+            <div class="toast-body">
+                Proses registrasi akun Anda sudah berhasil. Silakan lakukan konfirmasi email dengan cara
+                menekan tombol "Confirm" pada email yang terkirim.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toast = new bootstrap.Toast(document.getElementById('liveToast'));
+        toast.show();
+    </script>
+
+    <!-- Component: Card -->
+    <div class="card w-50">
+        <div class="card-body">
+            <h5 class="card-title">Judul Card</h5>
+            <p class="card-text">Contoh deskripsi card.</p>
+        </div>
+    </div>
+
+    <div class="m-auto card w-25">
+        <img src="https://source.unsplash.com/random/900×700/?web" class="card-img-top" alt="Web Programming" />
+        <div class="card-body">
+            <h5 class="card-title">Judul Card</h5>
+            <p class="card-text">Contoh deskripsi card.</p>
+            <a href="#" class="btn btn-primary">Detail produk</a>
+        </div>
+    </div>
+
+    <!-- modal -->
+
+    <!-- Tombol toggle untuk modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        Munculkan modal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal" id="myModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Judul Modal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Ini adalah konten dari card.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = new bootstrap.Modal('#myModal');
+        modal.show();
+    </script>
+
+    <!-- Component: Progress dan Spinner -->
+    <div class="spinner-border"></div>
+
+    <div class="progress">
+        <div class="progress-bar" style="width: 50%"></div>
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
+    </div>
+</body>
+
+</html>
