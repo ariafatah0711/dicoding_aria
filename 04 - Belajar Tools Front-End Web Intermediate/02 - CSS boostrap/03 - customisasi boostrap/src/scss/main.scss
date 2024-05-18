@@ -1,0 +1,6 @@
+@use 'vendors';
+@use 'sass:math';
+ 
+.container {
+    width: math.abs(50%);
+}
