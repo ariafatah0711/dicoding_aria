@@ -55,3 +55,22 @@ Extra extra large xxl >= 1400px
 ## container
 ```
 ```
+
+## web money tracker
+npm init --yes
+
+```
+# Dependencies development
+
+# For styling
+npm install autoprefixer@10.4.13 css-loader@6.7.2 postcss-loader@7.0.1 sass@1.56.1 sass-loader@13.2.0 style-loader@3.3.1 --save-dev --save-exact
+# For webpack and others the support
+npm install webpack@5.75.0 webpack-cli@5.0.0 webpack-dev-server@4.11.1 webpack-merge@5.8.0 clean-webpack-plugin@4.0.0 copy-webpack-plugin@11.0.0 html-webpack-plugin@5.5.0 --save-dev --save-exact
+# For babel
+npm install @babel/core@7.20.2 @babel/preset-env@7.20.2 babel-loader@9.1.0 --save-dev --save-exact
+# For additional package
+npm install prettier@2.7.1 --save-dev --save-exact
+
+# Dependencies production
+npm install @popperjs/core@2.11.6 bootstrap@5.2.2 bootstrap-icons@1.10.2 --save --save-exact
+```
