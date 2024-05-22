@@ -1,0 +1,22 @@
+{
+  "name": "lit-starter-project",
+  "version": "1.0.0",
+  "description": "Lit starter project by Dicoding Indonesia",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --mode development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "lit": "^2.5.0"
+  }
+}
