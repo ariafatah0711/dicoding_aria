@@ -152,3 +152,28 @@ this.imagePath = 'img/users/user-01';
 html`<img src="/images/${this.imagePath ?? nothing}/${this.imageFile ?? nothing}">`;
 ```
 
+```
+class MyElement extends LitElement { 
+  constructor() {
+    super();
+    this.foo = 'foo';
+    this.bar = 'bar';
+  }
+}
+
+class MyElement extends LitElement {
+  connectedCallback() {
+    super.connectedCallback()
+    window.addEventListener('keydown', () => { /* ... */ }); 
+  }
+}
+
+class MyElement extends LitElement {
+  connectedCallback() { /* ... */ }
+ 
+  disconnectedCallback() {
+    super.disconnectedCallback()
+    window.removeEventListener('keydown', () => { /* ... */ });
+  }
+}
+```
