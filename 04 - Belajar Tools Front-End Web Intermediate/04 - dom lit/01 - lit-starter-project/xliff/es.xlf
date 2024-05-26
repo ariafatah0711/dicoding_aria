@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<file target-language="es" source-language="en" original="lit-localize-inputs" datatype="plaintext">
+<body>
+<trans-unit id="s6dfd1a978586d8de">
+  <source>Welcome, <x id="0" equiv-text="${this.name}"/>!</source>
+</trans-unit>
+<trans-unit id="sacac6b633604cb76">
+  <source>I hope you are in good condition</source>
+</trans-unit>
+<trans-unit id="h23f91a1995670179">
+  <source> Please visit
+          <x id="0" equiv-text="&lt;a href=&quot;https://www.dicoding.com/&quot; target=&quot;_blank&quot;&gt;"/>this site<x id="1" equiv-text="&lt;/a&gt;"/> to be professional
+          programmer</source>
+</trans-unit>
+</body>
+</file>
+</xliff>
