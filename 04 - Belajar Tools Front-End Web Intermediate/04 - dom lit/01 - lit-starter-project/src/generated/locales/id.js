@@ -9,10 +9,14 @@
     /* eslint-disable @typescript-eslint/no-explicit-any */
 
     export const templates = {
-      's6dfd1a978586d8de': str`Welcome, ${0}!`,
-'sacac6b633604cb76': `I hope you are in good condition`,
-'h23f91a1995670179': html` Please visit
-          <a href="https://www.dicoding.com/" target="_blank">this site</a> to be professional
-          programmer`,
+      'h23f91a1995670179': html`
+          tolong kunjungi
+          <a href="https://www.dicoding.com/" target="_blank">situs ini</a> 
+          untuk menjadi progammer 
+          profesional
+        `,
+'s6dfd1a978586d8de': str`Selamat datang, ${0}!
+        `,
+'sacac6b633604cb76': `Saya harap Anda dalam kondisi baik`,
     };
   

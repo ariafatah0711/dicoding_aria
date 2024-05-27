@@ -20,5 +20,6 @@ export const setLocaleFromUrl = async () => {
 
 export const localeNames = {
   en: 'Inggris',
+  es: 'spanyol',
   id: 'Indonesia',
 };
