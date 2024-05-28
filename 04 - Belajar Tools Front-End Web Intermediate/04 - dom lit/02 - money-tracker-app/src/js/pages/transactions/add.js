@@ -1,13 +1,36 @@
 const Add = {
   async init() {
+    this._initialUI();
     this._initialListener();
   },
 
+  _initialUI() {
+    const listInputRadioTransactionType = [
+      {
+        inputId: 'recordType1',
+        value: 'income',
+        caption: 'Pemasukan',
+        required: true,
+      },
+      {
+        inputId: 'recordType2',
+        value: 'expense',
+        caption: 'Pengeluaran',
+        required: true,
+      },
+    ];
+    const inputRadioTransactionTypeAdd = document.querySelector('#inputRadioTransactionTypeAdd');
+    inputRadioTransactionTypeAdd.setAttribute(
+      'listRadio',
+      JSON.stringify(listInputRadioTransactionType),
+    );
+  },
+
   _initialListener() {
-    const evidenceInput = document.querySelector('#validationCustomEvidence');
-    evidenceInput.addEventListener('change', () => {
-      this._updatePhotoPreview();
-    });
+    // const evidenceInput = document.querySelector('#validationCustomEvidence');
+    // evidenceInput.addEventListener('change', () => {
+    //   this._updatePhotoPreview();
+    // });
 
     const addFormRecord = document.querySelector('#addRecordForm');
     addFormRecord.addEventListener(
@@ -52,21 +75,21 @@ const Add = {
     };
   },
 
-  _updatePhotoPreview() {
-    const evidenceImgChange = document.querySelector('#validationCustomEvidenceImgChange');
-    const evidenceImgInput = document.querySelector('#validationCustomEvidence');
+  // _updatePhotoPreview() {
+  //   const evidenceImgChange = document.querySelector('#validationCustomEvidenceImgChange');
+  //   const evidenceImgInput = document.querySelector('#validationCustomEvidence');
 
-    const photo = evidenceImgInput.files[0];
-    if (!photo) return;
+  //   const photo = evidenceImgInput.files[0];
+  //   if (!photo) return;
 
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      evidenceImgChange.parentElement.classList.remove('d-none');
-      evidenceImgChange.style.backgroundImage = `url('${event.target.result}')`;
-    };
+  //   const reader = new FileReader();
+  //   reader.onload = (event) => {
+  //     evidenceImgChange.parentElement.classList.remove('d-none');
+  //     evidenceImgChange.style.backgroundImage = `url('${event.target.result}')`;
+  //   };
 
-    reader.readAsDataURL(photo);
-  },
+  //   reader.readAsDataURL(photo);
+  // },
 
   _validateFormData(formData) {
     const formDataFiltered = Object.values(formData).filter((item) => item === '');
