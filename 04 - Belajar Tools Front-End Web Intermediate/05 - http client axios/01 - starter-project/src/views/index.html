@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Memulai dengan Axios</title>
+
+  <style>
+    *,
+    *::after,
+    *::before {
+      box-sizing: border-box;
+    }
+
+    form {
+      max-width: 50%;
+      min-width: 300px;
+
+      border: 1px solid black;
+      padding: 8px;
+    }
+
+    form>div {
+      margin-block-end: 16px;
+    }
+
+    form input[type='text'] {
+      display: block;
+      width: 100%;
+    }
+
+    form #forcedAnswerContainer {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Pertanyaan dengan Jawaban Random (yes/no/maybe)</h1>
+
+  <form id="questionForm">
+    <div>
+      <label for="questionInput">Pertanyaan</label>
+      <input type="text" id="questionInput" placeholder="Masukkan pertanyaanmu" required />
+    </div>
+
+    <div>
+      <input type="checkbox" id="forcedAnswerCheckbox" />
+      <label for="forcedAnswerCheckbox">Gunakan jawaban paksaan</label>
+    </div>
+
+    <div id="forcedAnswerContainer">
+      <p>Pilih jawaban paksaan:</p>
+      <input type="radio" name="forcedAnswer" value="yes" id="forcedAnswerYes" />
+      <label for="forcedAnswerYes">Yes</label>
+      <input type="radio" name="forcedAnswer" value="no" id="forcedAnswerNo" />
+      <label for="forcedAnswerNo">No</label>
+      <input type="radio" name="forcedAnswer" value="maybe" id="forcedAnswerMaybe" />
+      <label for="forcedAnswerMaybe">Maybe</label>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p>Jawaban: <span id="textAnswer">...</span></p>
+</body>
+
+</html>
