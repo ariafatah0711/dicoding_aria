@@ -8,10 +8,7 @@ const Dashboard = {
 
   async _initialData() {
     try {
-      const response = await Transactions.getAll();
-      const responseRecords = response.data.results;
-
-      this._userTransactionsHistory = responseRecords.transactionsHistory;
+      this._userTransactionsHistory = await Transactions.getAll();
 
       this._populateTransactionsRecordToTable(this._userTransactionsHistory);
       this._populateTransactionsDataToCard(this._userTransactionsHistory);
@@ -142,7 +139,7 @@ const Dashboard = {
         <td>${transactionRecord.type === 'income' ? 'Pemasukan' : 'Pengeluaran'}</td>
         <td>${transactionRecord.name}</td>
         <td>${transactionRecord.amount}</td>
-        <td>${transactionRecord.date}</td>
+        <td>${transactionRecord.date.toDate().toDateString()}</td>
         <td>
           <div class="d-flex justify-content-center align-items-center gap-2">
             <a class="btn btn-sm btn-primary" href="#"

@@ -1,8 +1,6 @@
 import { html } from 'lit';
 import LitWithoutShadowDom from './base/LitWithoutShadowDom';
 import { msg, updateWhenLocaleChanges } from '@lit/localize';
-// import Utils from '../utils/utils';
-// import Config from '../config/config';
 import CheckUserAuth from '../pages/auth/check-user-auth';
 import Auth from '../network/auth';
 
