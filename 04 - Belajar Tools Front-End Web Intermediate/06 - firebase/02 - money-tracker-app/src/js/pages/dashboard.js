@@ -37,11 +37,12 @@ const Dashboard = {
         event.preventDefault();
 
         const recordId = event.target.dataset.recordId;
+        const recordEvidence = event.target.dataset.recordEvidence;
         try {
-          const response = await Transactions.destroy(recordId);
-          window.alert('Transaction has been destroyed');
+          await Transactions.destroy(recordId);
+          await Transactions.destroyEvidence(recordEvidence);
 
-          window.location.href = '/';
+          window.alert('Transaction has been destroyed');
         } catch (error) {
           console.error(error);
         }
@@ -122,12 +123,21 @@ const Dashboard = {
     const amountDetailRecord = document.querySelector('#recordDetailModal #amountDetailRecord');
     const descriptionDetailRecord = document.querySelector('#recordDetailModal #noteDetailRecord');
 
-    imgDetailRecord.setAttribute('src', transactionRecord.evidenceUrl);
-    imgDetailRecord.setAttribute('alt', transactionRecord.name);
+    // imgDetailRecord.setAttribute('src', transactionRecord.evidenceUrl);
+    // imgDetailRecord.setAttribute('alt', transactionRecord.name);
+    Transactions.getEvidenceURL(transactionRecord.evidence)
+      .then((url) => {
+        imgDetailRecord.setAttribute('src', url);
+        imgDetailRecord.setAttribute('alt', transactionRecord.name);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+
     typeDetailRecord.textContent =
       transactionRecord.type === 'income' ? 'Pemasukan' : 'Pengeluaran';
     nameDetailRecord.textContent = transactionRecord.name;
-    dateDetailRecord.textContent = transactionRecord.date;
+    dateDetailRecord.textContent = transactionRecord.date.toDate().toDateString();
     amountDetailRecord.textContent = transactionRecord.amount;
     descriptionDetailRecord.textContent = transactionRecord.description || '-';
   },
@@ -155,6 +165,7 @@ const Dashboard = {
             <a class="btn btn-sm btn-danger" href="#"
                id="delete-${transactionRecord.id}"
                data-record-id="${transactionRecord.id}"
+               data-record-evidence="${transactionRecord.evidence}"
             >
               <i class="bi bi-trash3-fill me-1"></i>Delete
             </a>

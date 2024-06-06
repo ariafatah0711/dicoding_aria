@@ -70,8 +70,11 @@ const Edit = {
       console.log(formData);
 
       try {
-        if (!formData.evidence) {
-          delete formData.evidence;
+        if (formData.evidence) {
+          // Delete old evidence
+          Transactions.destroyEvidence(this);
+          const storageResponse = await Transactions.storeEvidence(formData.evidence);
+          formData.evidence = storageResponse.metadata.fullPath;
         }
         const response = await Transactions.update({
           ...formData,
@@ -124,33 +127,19 @@ const Edit = {
 
     nameInput.value = transactionRecord.name;
     amountInput.value = transactionRecord.amount;
+    dateInput.value = transactionRecord.date.toDate().toISOString().slice(0, 16);
 
-    // console.log(transactionRecord.dateInput); // Check the type
-    // console.log(transactionRecord);
-    // dateInput.value = transactionRecord.date.slice(0, 16);
+    Transactions.getEvidenceURL(transactionRecord.evidence)
+      .then((url) => {
+        inputImagePreviewEdit.setAttribute('defaultImage', url);
+        inputImagePreviewEdit.setAttribute('defaultImageAlt', transactionRecord.name);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
 
-    // Mengasumsikan transactionRecord.date adalah sebuah objek dengan properti seperti Timestamp
-    const timestamp = transactionRecord.date;
-
-    // Membuat objek Date dari timestamp
-    const dateObject = new Date(timestamp.seconds * 1000); // Konversi ke milidetik
-
-    // Mendapatkan tahun, bulan, dan tanggal dari objek Date
-    const year = dateObject.getFullYear();
-    const month = ('0' + (dateObject.getMonth() + 1)).slice(-2); // Menggunakan slice untuk menambahkan nol di depan jika perlu
-    const day = ('0' + dateObject.getDate()).slice(-2); // Menggunakan slice untuk menambahkan nol di depan jika perlu
-
-    // Format tanggal sesuai dengan yang diharapkan
-    const formattedDate = `${year}-${month}-${day}T00:00`; // Di sini kita asumsikan jam selalu 00:00
-
-    // Menetapkan nilai formattedDate ke dateInput
-    dateInput.value = formattedDate;
-
-    // #####
-    // dateInput.value = transactionRecord.slice(0, 16);
-
-    inputImagePreviewEdit.setAttribute('defaultImage', transactionRecord.evidenceUrl);
-    inputImagePreviewEdit.setAttribute('defaultImageAlt', transactionRecord.name);
+    // inputImagePreviewEdit.setAttribute('defaultImage', transactionRecord.evidenceUrl);
+    // inputImagePreviewEdit.setAttribute('defaultImageAlt', transactionRecord.name);
 
     descriptionInput.value = transactionRecord.description;
 

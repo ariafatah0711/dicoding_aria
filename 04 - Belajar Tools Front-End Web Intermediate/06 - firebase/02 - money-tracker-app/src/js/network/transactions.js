@@ -1,4 +1,4 @@
-import { auth, db } from '../utils/firebase';
+import { auth, db, storage } from '../utils/firebase';
 import {
   addDoc,
   collection,
@@ -10,10 +10,10 @@ import {
   updateDoc,
   where,
 } from 'firebase/firestore';
+import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 
 const Transactions = {
   async getAll() {
-    console.log(auth);
     const transactionsRef = collection(db, 'transactions');
     const transactionsQuery = query(transactionsRef, where('userId', '==', auth.currentUser.uid));
     const querySnapshot = await getDocs(transactionsQuery);
@@ -59,6 +59,24 @@ const Transactions = {
     const transactionRef = doc(db, 'transactions', id);
 
     return await deleteDoc(transactionRef);
+  },
+
+  async storeEvidence(file) {
+    const storageRef = ref(storage, `transactions/${auth.currentUser.uid}/${file.name}`);
+
+    return await uploadBytes(storageRef, file);
+  },
+
+  async getEvidenceURL(fileFullPath) {
+    const storageRef = ref(storage, fileFullPath);
+
+    return await getDownloadURL(storageRef);
+  },
+
+  async destroyEvidence(fileFullPath) {
+    const desertRef = ref(storage, fileFullPath);
+
+    return await deleteObject(desertRef);
   },
 };
 

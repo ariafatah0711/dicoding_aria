@@ -36,3 +36,19 @@ npm install firebase-tools --global
 firebase --version
 firebase init
 firebase deploy
+
+<!-- deploy -->
+npm install -g firebase-tools
+firebase login
+? Allow Firebase to collect CLI and Emulator Suite usage and error reporting information? Yes
+
+firebase init
+>( ) Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys
+Use an existing project
+Money Tracker App
+dist
+N
+N
+
+npm run build:prod
+firebase deploy
