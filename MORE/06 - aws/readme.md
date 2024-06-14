@@ -81,3 +81,48 @@ EC2>instance
 
 - ElastiCache => enambahkan lapisan cache pada database yang dapat meningkatkan read time (waktu baca)
 - DynamoDB Accelerator (DAX) => native caching layer yang dirancang untuk meningkatkan waktu read (baca) untuk data nonrelasional.
+
+# 4 keamanan
+- AWS mengontrol security of the cloud (keamanan dari cloud).
+- Pelanggan mengontrol security in the cloud (keamanan di cloud).
+
+- IAM (Identity and Access Management)
+    - IAM users => user
+    - IAM policies => permission
+    - IAM groups => group
+    - IAM roles => akses sementara
+- AWS organisation
+- multi-factor authentication (MFA).
+
+- tipe serangan DDOS
+    - UDP flood => meminta request terhadap service lain yang nantinya penerimnya adalah server kita
+    - HTTP level attack => exploitasi
+    - Slowloris attack => berpura-pura memiliki koneksi yang sangat lambat. Ini menyebabkan server Anda terus menunggu pelanggan, alias, penyerang tersebut menyelesaikan permintaannya dan membuat pelanggan lain tak terlayani
+
+- mempertahankan serangan DDOS
+    - ELB => Elastis Load Balancer (menangani setiap permintaan hingga selesai terlebih dahulu, tak peduli ia memiliki koneksi yang cepat atau bahkan lambat)
+    - AWS Shield => melindungi aplikasi Anda dari serangan DDoS.
+        - Standar (free) => mendeteksi dan memitigasi traffic berbahaya secara real time saat memasuki aplikasi Anda
+        - Advanced (pay) => mendiagnostik, mendeteksi, dan memitigasi serangan DDoS yang canggih. 
+        - AWS WAF( web application firewall) => alat tambahan untuk aws shield 
+
+- encrypt
+    - Encryption at rest =>  enkripsi terjadi saat data Anda dalam keadaan tidak bergerak (tersimpan dan tidak berpindah).
+        - telah aktif otomatis pada DynamoDb
+    - Encryption in-transit =>  terjadi saat data Anda berpindah antara A dan B. A dan B ini bisa berupa apa pun, seperti layanan AWS dan klien yang mengakses layanan tersebut.
+        - seperti ketika melakukan sql client dia akan menggunakan SSL
+
+- AWS Security
+    - AWS KMS (Key Management Service)
+        - layanan yang memungkinkan Anda untuk melakukan enkripsi menggunakan cryptographic key (kunci kriptografi)
+    - AWS WAF (Web Application Firewall)
+    - Amazon Inspector
+        - find vuln in ur app
+    - Amazon GuardDuty
+        - deteksi ancaman cerdas untuk infrastruktur dan sumber daya AWS Anda
+        - menggunakan integrated threat intelligence (kecerdasan ancaman terintegrasi) seperti alamat IP berbahaya, deteksi anomali, dan machine learning untuk mengidentifikasi ancaman dengan lebih akurat.
+        - 
+
+```
+- “principle of least privilege”. Maksudnya, berikanlah akses sesuai dengan kebutuhan saat itu saja.
+```
