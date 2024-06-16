@@ -86,6 +86,9 @@ EC2>instance
 - AWS mengontrol security of the cloud (keamanan dari cloud).
 - Pelanggan mengontrol security in the cloud (keamanan di cloud).
 
+- authentication => email, password
+- authorization => apa yang kita bisa akses di akun ini
+
 - IAM (Identity and Access Management)
     - IAM users => user
     - IAM policies => permission
@@ -122,7 +125,6 @@ EC2>instance
         - deteksi ancaman cerdas untuk infrastruktur dan sumber daya AWS Anda
         - menggunakan integrated threat intelligence (kecerdasan ancaman terintegrasi) seperti alamat IP berbahaya, deteksi anomali, dan machine learning untuk mengidentifikasi ancaman dengan lebih akurat.
         - 
-
 ```
 - “principle of least privilege”. Maksudnya, berikanlah akses sesuai dengan kebutuhan saat itu saja.
 ```
