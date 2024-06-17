@@ -1,8 +1,6 @@
 # 0
 IAAS (Infrastucture as a service => full service) => vm, netwrok, machine
-- EC2 => server virtual
-
-
+    - EC2 => server virtual
 PAAS (Platform as a service => app) => developmenet, production, application
 SAAS (Software as a serrvicee => simple service) => goggle workspace, netflix
 
@@ -128,3 +126,52 @@ EC2>instance
 ```
 - “principle of least privilege”. Maksudnya, berikanlah akses sesuai dengan kebutuhan saat itu saja.
 ```
+
+# 5 anyalitik / monitoring(pemantauan)
+- environment
+    - Amazon CloudWatch => memantau infrastruktur dan aplikasi yang Anda jalankan di AWS secara real time
+        - CloudWatch alarm dapat terintegrasi dengan layanan Amazon SNS(bisa dpt email notificatsi gitu)
+        - cloydWath Logs => api activty in your aws account
+    - AWS CloudTrail => melihat riwayat lengkap dari aktivitas pengguna dan panggilan API untuk aplikasi maupun sumber daya Anda.
+        - etiap permintaan yang dikirimkan ke AWS, seperti meluncurkan EC2 instance; menambahkan baris ke tabel DynamoDB; atau mengubah izin pengguna, semuanya akan tercatat di mesin CloudTrail.
+        - AWS CloudTrail sebagai log tindakan atau “jejak” yang ditinggalkan seseorang
+    - AWS Trusted Advisor =>  memeriksa lingkungan AWS Anda dan memberikan rekomendasi secara real time sesuai dengan praktik terbaik AWS.
+        ```
+        Cost optimization (pengoptimalan biaya)
+        Performance (kinerja)
+        Security (keamanan)
+        Fault tolerance (toleransi terhadap kesalahan)
+        Service limits (batas layanan)
+        ```
+- application
+    - AWS X RAY => monitoring serverles service (labda)
+- networking
+    - VPC Flow log => melihat trafic masuk keluarnya request
+
+# 6 harga
+- aws tier
+    - alwasy free => aws ladmda, dynamo db (25gb)
+    - 12 months free => S3 (5gb), EC2 (750 jam), cloud front (50gb)
+    - trials
+
+- pembayaran
+    - Pay for what you use (Bayar sesuai yang Anda gunakan)
+    - Pay less when you reserve (Berhemat saat Anda memesan di awal)
+    - Pay less with volume-based discounts when you use more (Bayar lebih murah dengan diskon berbasis volume saat Anda menggunakan lebih sering)
+
+- AWS Pricing Calculator => menjelajahi layanan AWS dan membuat estimasi biaya untuk kasus penggunaan di AWS
+
+- Billing Dashboard =>  layanan yang dapat Anda gunakan untuk melihat informasi penagihan, 
+    - membayar tagihan AWS, memantau penggunaan, menganalisis, dan mengontrol biaya.
+
+- Consolidated Billing =>  fitur yang memungkinkan Anda untuk mendapatkan satu tagihan untuk semua akun AWS yang ada di organisasi.
+- AWS Budgets => menetapkan anggaran pada berbagai skenario, seperti biaya atau penggunaan layanan. Bahkan, 
+    - layanan ini bisa mengirimkan notifikasi saat penggunaan Anda sudah melebihi jumlah batas anggaran.
+- AWS Cost Explorer => layanan berbasis konsol yang dapat meninjau dan menganalisis secara visual pengeluaran Anda di AWS.
+- AWS Support Plans
+    - Basic
+    - Developer
+    - Business
+    - Enterprise =>  menerima dukungan dari AWS Technical Account Manager (TAM).
+- AWS Marketplace => menyederhanakan langkah Anda guna menemukan, melakukan pengujian, dan membeli software pihak ketiga yang berjalan di arsitektur AWS.
+    - Infrastructure Software, Business Applications, Data & Analytics, DevOps, dll.
