@@ -1,10 +1,10 @@
-# 0
+# 0.
 IAAS (Infrastucture as a service => full service) => vm, netwrok, machine
     - EC2 => server virtual
 PAAS (Platform as a service => app) => developmenet, production, application
 SAAS (Software as a serrvicee => simple service) => goggle workspace, netflix
 
-# 1
+# 1.
 - EC2 => Amazon Elastic Compute Cloud
 - labmda => Serverles Service (hanya menjalankan application)
 - ECS => Amazon Elastic Container Service
@@ -30,7 +30,7 @@ Anda harus memilih layanan orkestrasinya terlebih dahulu. Anda bisa menggunakan 
 Setelah memilih alat orkestrasinya, kemudian Anda perlu menentukan platformnya. Anda dapat menjalankan container pada EC2 instance yang Anda kelola sendiri atau dalam lingkungan serverless seperti AWS Fargate yang dikelola oleh AWS.
 ```
 
-# 2 network
+# 2. network
 - VPC => Virtual Private Cloud
 
 - firewall
@@ -55,7 +55,7 @@ EC2>instance
     pilih network vpc nya jadi vpc yang tadi sudah dibuat
 ```
 
-# 3 Database
+# 3. Database
 - EBS => elastis block store (storage yang berada di disk (read))
 - S3 => Simple Storage (storage yang bisa mencandangkan file)
 - EFS => elastis file system (storage file system (read, write) berbagi data antar EC2)
@@ -80,7 +80,7 @@ EC2>instance
 - ElastiCache => enambahkan lapisan cache pada database yang dapat meningkatkan read time (waktu baca)
 - DynamoDB Accelerator (DAX) => native caching layer yang dirancang untuk meningkatkan waktu read (baca) untuk data nonrelasional.
 
-# 4 keamanan
+# 4. keamanan
 - AWS mengontrol security of the cloud (keamanan dari cloud).
 - Pelanggan mengontrol security in the cloud (keamanan di cloud).
 
@@ -127,7 +127,7 @@ EC2>instance
 - “principle of least privilege”. Maksudnya, berikanlah akses sesuai dengan kebutuhan saat itu saja.
 ```
 
-# 5 anyalitik / monitoring(pemantauan)
+# 5. anyalitik / monitoring(pemantauan)
 - environment
     - Amazon CloudWatch => memantau infrastruktur dan aplikasi yang Anda jalankan di AWS secara real time
         - CloudWatch alarm dapat terintegrasi dengan layanan Amazon SNS(bisa dpt email notificatsi gitu)
@@ -148,7 +148,7 @@ EC2>instance
 - networking
     - VPC Flow log => melihat trafic masuk keluarnya request
 
-# 6 harga
+# 6. harga
 - aws tier
     - alwasy free => aws ladmda, dynamo db (25gb)
     - 12 months free => S3 (5gb), EC2 (750 jam), cloud front (50gb)
@@ -175,3 +175,55 @@ EC2>instance
     - Enterprise =>  menerima dukungan dari AWS Technical Account Manager (TAM).
 - AWS Marketplace => menyederhanakan langkah Anda guna menemukan, melakukan pengujian, dan membeli software pihak ketiga yang berjalan di arsitektur AWS.
     - Infrastructure Software, Business Applications, Data & Analytics, DevOps, dll.
+
+# 6. migrasi dan inovasi
+- CAF (Cloud Adoption Framework) => Framework atau kerangka kerja tersebut membagi panduan menjadi 6 area yang disebut dengan perspektif. Masing-masing perspektif meliputi tanggung jawab dari kelompok yang berbeda.
+    - BUSENIS
+    - PEOPLE
+    - GOVERNANCE
+    - PLATFORM
+    - SECURITY
+    - OPRATIONS
+
+- strategi migrasi (6 R migrasi)
+    - rehosting =>  sebagai lift and shift (angkat dan pindahkan). 
+        - Opsi ini mudah dilakukan karena Anda tak perlu membuat perubahan apa pun. Cukup pindahkan aplikasi yang Anda miliki ke AWS.
+    - replatform =>  lift, tinker, and shift (angkat, perbaiki, dan pindahkan). 
+        - Pada dasarnya, opsi ini masih berupa lift and shift namun Anda dapat melakukan beberapa pengoptimalan cloud. Dalam strategi ini, Anda tak akan mengubah arsitektur inti (core architecture) apa pun pada proses migrasi aplikasi.
+    - retring => hapuslah aplikasi yang tidak lagi Anda butuhkan.
+    - reetaining => hanya memigrasikan aplikasi yang sekiranya masuk akal dan berguna untuk bisnis.
+    - repurchasing => meninggalkan vendor perangkat lunak lama dan memulai yang baru
+    - Refactoring/re-architecting => menulis kode yang bar
+
+
+- AWS Snow Family =>  kumpulan perangkat fisik yang dapat membantu Anda untuk memindahkan data sampai dengan ukuran exabyte ke dalam dan keluar AWS.
+    - AWS Snowcone => AWS Snowcone dapat menampung data sampai dengan ukuran 8 TB (terabyte) dan berisi edge computing (sistem komputasi yang dapat melakukan pemrosesan dan analisis data sedekat mungkin ke lokasi yang dibutuhkan).
+    - AWS Snowball
+        - Snowball Edge Storage Optimized => ukuran lebih besar (80tb)
+        - Snowball Edge Compute Optimized => machine learning, analisis data, pemrosesan, dan penyimpanan lokal.
+    - AWS Snowmobile => layanan transfer data dengan skala exabyte yang digunakan untuk memindahkan data dalam jumlah besar ke AWS.
+        - 100pb (100.000tb)
+
+# 7. pengantar cloud
+- AWS Well-Architected Framework =>  dirancang untuk membantu Anda memahami bagaimana cara merancang dan mengoperasikan sistem yang andal, aman, efisien, dan hemat biaya di AWS Cloud.
+    - Operational Excellence (Keunggulan Operasional)
+    - Security (Keamanan)
+    - Reliability (Keandalan)
+    - Performance Efficiency (Efisiensi Kinerja)
+    - Cost Optimization (Pengoptimalan Biaya)
+
+- Lima pilar dari AWS Well-Architected Framework, di antaranya:
+    - Operational excellence (Keunggulan Operasional)
+    - Security (Keamanan)
+    - Reliability (Keandalan) - Performance efficiency (Efisiensi Kinerja)
+    - Cost optimization (Pengoptimalan Biaya)
+- Enam manfaat dari komputasi cloud, antara lain:
+    - Ubah pengeluaran di muka menjadi pengeluaran variabel.
+    - Manfaatkan masifnya skala ekonomi.
+    - Berhenti menebak kapasitas.
+    - Tingkatkan kecepatan dan ketangkasan.
+    - Hentikan biaya pengelolaan dan pemeliharaan data center.
+    - Mendunia dalam hitungan menit.
+
+# 8. certificate aws
+- 
