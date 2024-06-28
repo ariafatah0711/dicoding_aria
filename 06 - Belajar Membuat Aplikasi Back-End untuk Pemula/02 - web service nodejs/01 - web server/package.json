@@ -1,0 +1,14 @@
+{
+  "name": "01---web-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.js",
+    "routing": "node routing.js",
+    "response": "node response.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
