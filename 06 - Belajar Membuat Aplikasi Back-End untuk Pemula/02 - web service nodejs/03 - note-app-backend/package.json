@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./src/server.js",
-    "lint": "eslint ./src"
+    "lint": "eslint ./src",
+    "api-test": "newman run ./notes-api.postman_collection.json --environment \"./notes api.postman_environment.json\""
   },
   "keywords": [],
   "author": "",
