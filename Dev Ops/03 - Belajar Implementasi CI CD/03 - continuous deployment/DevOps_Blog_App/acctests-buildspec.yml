@@ -1,0 +1,13 @@
+version: 0.2
+
+phases:
+
+  build:
+    commands:
+      - export IP_ADDRESS=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=CodePipelineBlog" --query "Reservations[].Instances[].PublicIpAddress" --output text)
+      - "curl --max-time 10 $IP_ADDRESS >> acc_test_output.txt" # test the homepage
+      - "cat acc_test_output.txt"
+
+artifacts:
+  files:
+    - 'acc_test_output.txt'
