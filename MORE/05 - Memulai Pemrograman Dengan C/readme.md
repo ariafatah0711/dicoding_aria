@@ -75,3 +75,157 @@ main ()
 ```
 
 # Pengantar Pengisian Nilai Variabel 
+- Variabel adalah nama yang dapat menampung nilai yang dapat diubah. Variabel mempunyai type tertentu, yang menentukan type nilai yang disimpannya.
+- Integer (bilangan bulat), yaitu angka tanpa titik desimal.
+  - Contoh nilai integer : 10 (artinya sepuluh).
+- Bilangan riil, yaitu angka yang dapat mempunyai pecahan yang dituliskan sebagai angka di belakang titik desimal.
+  - Contoh nilai riil : 0.5 (artinya setengah).
+- Karakter (huruf), yaitu huruf atau karakter lainnya yaitu angka, karakter khusus, atau bahkan yang tidak kelihatan misalnya “spasi”, akhir baris.
+
+- Pengisian nilai variabel dapat dilakukan dengan dua cara, yaitu:
+  - Saat dideklarasikan, atau
+  - Dengan instruksi “assignment.” 
+
+# Pengisian Nilai dengan Inisialisasi 
+```bash
+#include<stdio.h>
+int main()
+{   
+  int i = 5;
+}
+```
+
+```bash
+/* File : initvar.c */
+/* Penulis : Bu Dengklek, email inge@bebras.or.id */
+/* Mengisi variabel i yg bertype in dengan nilai 5 dan menuliskannya */
+#include<stdio.h>
+int main ()
+{/* Kamus */
+  int i = 5; /* deklarasi dan inisialisasi nilai variabel i dengan 5 */
+  /* Algoritma */
+  printf ("Ini nilai i : %d \n", i);/*untuk mengamati dampak inisialisasi*/
+  return 0;
+}
+```
+
+# Pengisian Nilai dengan Assignment 
+- Pengisian nilai variabel I pada program ini dilakukan dengan melakukan assignment, yang dalam bahasa C dituliskan dengan tanda =.
+
+```bash
+/* File : assigni.c */
+/* Penulis : Bu Dengklek, email inge@bebras.or.id */
+/* Mengisi variabel i yg ber-type in dengan nilai 5 dan menuliskannya */
+#include<stdio.h>
+ 
+int main ()
+{/* Kamus */
+  int i;
+ 
+  /* Algoritma */
+  i = 5; /* sekarang variabel i akan bernilai 5 */
+  printf ("Ini nilai i : %d \n", i);
+ 
+  i = i+1; /* nilai i ditambah 1, hasilnya disimpan kembali di i */
+  printf ("Ini nilai i : %d \n", i);
+ 
+  return 0;
+}
+```
+
+# Inisialisasi dan Assignment Nilai Bilangan Riil 
+- Type bilangan riil dalam bahasa C dituliskan sebagai float. Ada dua cara untuk menuliskan nilai bilangan riil, yaitu: bilangan bertitik desimal, atau bilangan bertitik desimal diikuti dengan pangkatnya.
+- Nilai yang dapat disimpan pada bilangan ber-type float adalah antara 1.175494351 E – 38 sampai dengan 3.402823466 E + 38.
+
+```bash
+/* File : assignf.c */
+/* Penulis : Bu Dengklek, email inge@bebras.or.id */
+/* Mengisi variabel i yg bertype in dengan nilai 5 dan menuliskannya */
+#include<stdio.h>
+int main()
+{ /* Kamus */
+  float f = 0.555;
+  float x = 1.5E3;
+/* Algoritma */
+   printf ("Ini nilai f : %f \n", f);
+   printf ("Ini nilai f : %5.2f \n", f);
+   printf ("Ini nilai x : %10.2f \n", x);
+return 0;
+}
+```
+
+# Pengisian Nilai Bertipe Karakter (Char) 
+- Sebuah karakter dikodekan menjadi kode ASCII atau kode lainnya dalam komputer. Karakter dapat berupa : angka [‘0’ ..  ‘9’], abjad huruf kecil [‘a’..’z’], abjad huruf kapital ‘’A’..’Z’], karakter khusus selain abjad dan huruf yang dapat Anda amati pada keyboard  {!, @, #, $, ^, &, *, (, ), ?, “, ! ……. } atau karakter lainnya  yang tidak kelihatan.
+- Deklarasi sebuah nama yang isinya adalah karakter dalam bahasa C dinyatakan dengan char. Sebuah variabel ber-type char hanya dapat menampung satu karakter saja, dan nilainya dapat diberikan dalam penulisan karakternya, atau kodenya.
+
+- Program berikut ini adalah contoh bagaimana Anda menyimpan sebuah “nilai” karakter dalam variabel bertipekan char.
+
+```bash
+/* File: assignKar.c */
+/* Penulis : Bu Dengklek, email inge@bebras.or.id */
+/* Deskripsi : */
+/* Program ini berisi contoh sederhana untuk mendefinisikan */
+/* variabel bertype karakter */
+#include<stdio.h>
+int main ()
+{
+/* KAMUS */
+  char c = 65; /* inisialisasi nilai karakter dengan 65, kode huruf ‘A’ */
+  char c1;
+/* Algoritma */
+/* penulisan karakter sebagai huruf */
+  printf ("Karakter = %c\n", c);
+  c1 = 'Z'; /* variabel c1 diisi dengan huruf ‘Z’ */
+  printf ("Karakter = %c\n", c1);
+ 
+/* penulisan karakter */
+  printf ("Karakter dalam kode ASCII = %d\n", c);
+  printf ("Karakter sebagai huruf = %c\n", c);
+  printf ("Karakter dalam kode ASCII = %d\n", c1);
+  printf ("Karakter sebagai huruf = %c\n", c1);
+ 
+  return 0;
+}
+```
+
+# Apa itu Konstanta 
+- Konstanta secara konseptual adalah sebuah nama yang isinya tidak boleh diubah, berbeda dengan variabel yang isinya (nilainya) dapat diubah-ubah. Konstanta dapat dituliskan dalam bentuk literal sesuai dengan nilai yang dimaksud. Kenapa konstanta dituliskan sebagai nama dari pada sebagai literal ? agar sekali sebut nilainya dapat dipakai berkali-kali sesuai makna yang terkandung dalam nama konstanta, dan untuk menghindari literal yang bertebaran dalam sebuah program, yang dapat menimbulkan ke-tidak-konsisten-an dalam penulisan (jika salah ketik, maka konstanta yang maksudnya sama akan berbeda nilainya).
+
+## Ada tiga cara mendefinisikan konstanta dalam bahasa C, yaitu:
+- Dengan menuliskan nilainya secara langsung (disebut sebagai "literal" sesuai konvensi penulisan dalam bahasanya). Dengan cara ini, tidak mungkin muncul dalam deklarasi nama (karena tidak bernama), dan juga tidak mungkin ditulis di ruas kiri tanda assignment = karena akan menimbulkan salah sintaks.
+- Dengan memanfaatkan macro berkata kunci #define.
+- Dengan mendeklarasikan sebagai const kemudian menyebutkan type dan nilainya.
+
+- Best practices : tuliskan nama konstanta sesuai dengan artinya, dan biasanya dituliskan dalam huruf kapital.
+
+```bash
+/* File: konstanta.c */
+/* Penulis : Bu Dengklek, email inge@bebras.or.id */
+/* Deskripsi : */       
+/* Mendefinisikan konstanta bertype int, float, char  */
+#include<stdio.h>
+#define FALSE 0
+#define NOL 0
+#define SATU 1
+#define pi 3.1415
+int main ()
+{/* Kamus */
+  const int maks=3;
+  const float param =2.5;
+  const char cc = 65 ;
+  const char cA = 'A' ;
+ /* Algoritma */
+  printf ("PI  = %6.2f\n", pi);
+  printf ("NOL  = %d\n", NOL);
+  printf ("SATU  = %d\n", SATU);
+  printf ("FALSE  = %d\n", FALSE);
+  printf ("maks  = %d\n", maks);
+  printf ("param  = %f\n", param);
+  printf ("cc  = %c\n", cc);
+  printf ("cA  = %c\n", cA);
+  printf ("%d\n", 3);
+  printf ("3\n"); /* tanpa memakai nama, tidak disarankan */
+  return 0;
+}
+```
+
