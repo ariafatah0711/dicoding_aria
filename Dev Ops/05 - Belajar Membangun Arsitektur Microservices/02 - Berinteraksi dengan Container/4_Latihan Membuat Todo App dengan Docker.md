@@ -71,4 +71,3 @@ docker run -dp 3000:3000 --name todo-app todo-app:v2
 Buka kembali aplikasi di browser: [http://localhost:3000](http://localhost:3000).
 
 Sekarang, perubahan teks telah diterapkan! Namun, semua data sebelumnya hilang karena container lama dihapus. Selanjutnya, kita akan belajar menambahkan volume agar data tetap tersimpan meskipun container dihapus.
-
