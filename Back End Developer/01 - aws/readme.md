@@ -225,5 +225,13 @@ EC2>instance
     - Hentikan biaya pengelolaan dan pemeliharaan data center.
     - Mendunia dalam hitungan menit.
 
-# 8. certificate aws
+# 8. pengantar dukungan ai dari AWS
+![alt text](images/readme/image.png)
+- amazon Q (generative AI assistant yang sangat powerful untuk kebutuhan develop dan operate software.)
+  - install di vs code di extension
+  - cari ajaj amazon q dan install setelah itu sign in
+- Amazon Bedrock (aplikasi Generative AI adalah menggunakan foundation models (FMs).)
+- 
+
+# 9. certificate aws
 - 
